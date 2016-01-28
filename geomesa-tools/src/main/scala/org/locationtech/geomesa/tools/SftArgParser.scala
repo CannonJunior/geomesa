@@ -46,6 +46,7 @@ object SftArgParser extends LazyLogging {
         .orElse(parseSpecStringFile(specArg, featureName))
         .orElse(parseSpecConfFile(specArg, featureName))
         .getOrElse {
+          println("specArg: "+specArg+"featureName: "+featureName)
           throw new ParameterException("Unable to parse Simple Feature type from sft config or string")
         }
 
